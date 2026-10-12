@@ -1,0 +1,311 @@
+/* ===============================
+   FULL SCREEN BACKGROUND
+================================= */
+
+.aurora-bg{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-10;
+
+    background:
+        radial-gradient(circle at top,#151a35 0%,#0b1022 45%,#050813 100%);
+}
+
+
+/* ===============================
+   BOTTOM BLUE GLOW
+================================= */
+
+.bottom-glow{
+
+    position:absolute;
+
+    bottom:-280px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:900px;
+    height:900px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(37,99,235,.75),
+    rgba(37,99,235,.18),
+    transparent 70%);
+
+    filter:blur(35px);
+
+    animation:pulseGlow 7s ease-in-out infinite;
+}
+
+
+/* ===============================
+   RADIAL GRID
+================================= */
+
+.grid{
+
+    position:absolute;
+
+    left:50%;
+    bottom:-420px;
+
+    transform:translateX(-50%);
+
+    width:1700px;
+    height:900px;
+
+    border-radius:50%;
+
+    background-image:
+
+    repeating-radial-gradient(
+
+        circle,
+
+        rgba(255,255,255,.08) 0px,
+
+        rgba(255,255,255,.08) 2px,
+
+        transparent 2px,
+
+        transparent 42px
+
+    );
+
+    opacity:.22;
+}
+
+
+/* ===============================
+   VERTICAL GRID
+================================= */
+
+.grid::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    repeating-linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        transparent 58px,
+
+        rgba(255,255,255,.06) 60px
+
+    );
+
+}
+
+
+/* ===============================
+   LIGHT STREAKS
+================================= */
+
+.streak{
+
+    position:absolute;
+
+    width:2px;
+
+    height:160px;
+
+    background:
+
+    linear-gradient(
+
+    transparent,
+
+    rgba(96,165,250,.9),
+
+    transparent
+
+    );
+
+    opacity:.6;
+
+    animation:moveDown linear infinite;
+
+}
+
+.s1{
+    left:18%;
+    animation-duration:8s;
+}
+
+.s2{
+    left:42%;
+    animation-duration:11s;
+}
+
+.s3{
+    left:68%;
+    animation-duration:9s;
+}
+
+.s4{
+    left:84%;
+    animation-duration:13s;
+}
+
+
+/* ===============================
+   PARTICLES
+================================= */
+
+.particle{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    background:#7dd3fc;
+
+    border-radius:50%;
+
+    box-shadow:0 0 8px #60a5fa;
+
+    animation:floatParticle linear infinite;
+
+}
+
+.p1{
+left:10%;
+animation-duration:14s;
+animation-delay:-3s;
+}
+
+.p2{
+left:20%;
+animation-duration:18s;
+}
+
+.p3{
+left:32%;
+animation-duration:16s;
+}
+
+.p4{
+left:44%;
+animation-duration:20s;
+}
+
+.p5{
+left:56%;
+animation-duration:17s;
+}
+
+.p6{
+left:67%;
+animation-duration:15s;
+}
+
+.p7{
+left:79%;
+animation-duration:19s;
+}
+
+.p8{
+left:90%;
+animation-duration:14s;
+}
+
+
+/* ===============================
+   ANIMATIONS
+================================= */
+
+@keyframes pulseGlow{
+
+0%,100%{
+
+transform:translateX(-50%) scale(1);
+
+opacity:.65;
+
+}
+
+50%{
+
+transform:translateX(-50%) scale(1.12);
+
+opacity:1;
+
+}
+
+}
+
+@keyframes moveDown{
+
+0%{
+
+top:-200px;
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+top:100%;
+
+opacity:0;
+
+}
+
+}
+
+@keyframes floatParticle{
+
+0%{
+
+bottom:-20px;
+
+transform:translateX(0);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+50%{
+
+transform:translateX(20px);
+
+}
+
+100%{
+
+bottom:110%;
+
+transform:translateX(-15px);
+
+opacity:0;
+
+}
+
+}
